@@ -1,0 +1,47 @@
+<div class="ui container">
+
+    <div class="ui horizontal divider"></div>
+
+    <div class="ui grid">
+        <div class="one wide column"></div>
+        <div class="fourteen wide column">
+            {{description}}
+        </div>
+        <div class="one wide column"></div>
+    </div>
+
+    <div class="ui grid">
+        <div class="one wide column"></div>
+        <div class="fourteen wide column">
+            <div class="ui yellow message">
+                <div class="ui grid">
+                    <div class="three wide column">
+                        <h5>Data Sources</h5>
+                        <div *ngFor="let source of sources" class="ui list">
+                            <div class="item">
+                                <div class="ui checked checkbox">
+                                    <input type="checkbox" checked="">
+                                    <label>{{source}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ten wide column">
+                        <h5>Date Range</h5>
+                        <div class="ui input">
+                            <input type="text" placeholder="Start Date">
+                        </div>
+                        <div class="ui input">
+                            <input type="text" placeholder="End Date">
+                        </div>
+                    </div>
+                    <div class="one wide column">
+                        <button class="ui blue button">Generate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="one wide column"></div>
+    </div>
+
+</div>
