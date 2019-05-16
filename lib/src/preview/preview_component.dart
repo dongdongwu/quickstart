@@ -1,5 +1,7 @@
 import 'package:angular/angular.dart';
+import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
+import 'package:ng_bootstrap/ng_bootstrap.dart';
 
 import '../okr.dart';
 import '../okr_service.dart';
@@ -8,7 +10,7 @@ import '../route_paths.dart';
 @Component(
   selector: 'gti-preview',
   templateUrl: 'preview_component.html',
-  directives: [coreDirectives, routerDirectives],
+  directives: [coreDirectives, routerDirectives, BsDatePickerPopupComponent, formDirectives],
   providers: [OKRService],
 )
 class PreviewComponent {
@@ -35,4 +37,8 @@ class PreviewComponent {
   PreviewComponent(this._okrService);
 
   String printUrl() => RoutePaths.printPage.toUrl();
+
+  DateTime dt2 = DateTime.now();
+  DateTime dt1 = DateTime.now();
+  String format = "MM-dd-yyyy";
 }

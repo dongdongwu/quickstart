@@ -28,11 +28,15 @@
                     </div>
                     <div class="ten wide column">
                         <h5>Date Range</h5>
-                        <div class="ui input">
-                            <input type="text" placeholder="Start Date">
-                        </div>
-                        <div class="ui input">
-                            <input type="text" placeholder="End Date">
+                        <div class="ui grid">
+                            <div class="five wide column">
+                                <h6>Start Date</h6>
+                                <bs-date-picker-popup [(ngModel)]="dt1" [format]="format"></bs-date-picker-popup>
+                            </div>
+                            <div class="five wide column">
+                                <h6>End Date</h6>
+                                <bs-date-picker-popup [(ngModel)]="dt2" [format]="format"></bs-date-picker-popup>
+                            </div>
                         </div>
                     </div>
                     <div class="one wide column">
