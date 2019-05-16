@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div *ngFor="let okr of okrs" class="ui grid">
+    <div *ngFor="let okr of okrs; let i = index" class="ui grid">
         <div class="two wide column"></div>
         <div class="eight wide column">
             <div class="ui raised segment">
@@ -21,7 +21,7 @@
         </div>
         <div class="four wide column">
             <div class="ui input">
-                <input type="text" placeholder="Your tags...">
+                <input [(ngModel)]="okrs[i].tags" type="text" placeholder="Your tags...">
             </div>
         </div>
         <div class="two wide column"></div>
@@ -30,7 +30,7 @@
     <div class="ui grid">
         <div class="twelve wide column"></div>
         <div class="two wide column">
-            <a class="ui blue button" [routerLink]="preiviewUrl()">Confirm</a>
+            <button class="ui blue button" [routerLink]="preiviewUrl()" (click)="myFunction()">Confirm</button>
         </div>
     </div>
 </div>

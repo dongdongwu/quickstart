@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular_app/src/okr.dart';
+import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 
 import '../okr_service.dart';
@@ -9,7 +10,7 @@ import '../route_paths.dart';
   selector: 'tag',
   templateUrl: 'tag_component.html',
   styleUrls: ['tag_component.css'],
-  directives: [coreDirectives, routerDirectives],
+  directives: [coreDirectives, routerDirectives, formDirectives],
   providers: [OKRService],
 )
 class TagComponent implements OnInit {
@@ -35,4 +36,8 @@ class TagComponent implements OnInit {
   TagComponent(this._okrService);
 
   String preiviewUrl() => RoutePaths.previewPage.toUrl();
+
+  myFunction() {
+    print(okrs[0].tags);
+  }
 }
