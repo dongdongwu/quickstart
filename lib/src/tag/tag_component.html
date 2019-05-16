@@ -11,44 +11,12 @@
         </div>
     </div>
 
-    <div class="ui grid">
+    <div *ngFor="let okr of okrs" class="ui grid">
         <div class="two wide column"></div>
         <div class="eight wide column">
             <div class="ui raised segment">
-                <h5>OKR1</h5>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </div>
-        </div>
-        <div class="four wide column">
-            <div class="ui input">
-                <input type="text" placeholder="Your tags...">
-            </div>
-        </div>
-        <div class="two wide column"></div>
-    </div>
-
-    <div class="ui grid">
-        <div class="two wide column"></div>
-        <div class="eight wide column">
-            <div class="ui raised segment">
-                <h5>OKR2</h5>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </div>
-        </div>
-        <div class="four wide column">
-            <div class="ui input">
-                <input type="text" placeholder="Your tags...">
-            </div>
-        </div>
-        <div class="two wide column"></div>
-    </div>
-
-    <div class="ui grid">
-        <div class="two wide column"></div>
-        <div class="eight wide column">
-            <div class="ui raised segment">
-                <h5>OKR3</h5>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <h5>{{okr.title}}</h5>
+                <p>{{okr.description}}</p>
             </div>
         </div>
         <div class="four wide column">
@@ -62,7 +30,7 @@
     <div class="ui grid">
         <div class="twelve wide column"></div>
         <div class="two wide column">
-            <button class="ui blue button">Confirm</button>
+            <a class="ui blue button" [routerLink]="preiviewUrl()">Confirm</a>
         </div>
     </div>
 </div>

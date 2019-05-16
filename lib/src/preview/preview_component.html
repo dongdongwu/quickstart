@@ -36,12 +36,127 @@
                         </div>
                     </div>
                     <div class="one wide column">
-                        <button class="ui blue button">Generate</button>
+                        <button class="ui blue button" (click)="markGenerate()">Generate</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="one wide column"></div>
+    </div>
+
+
+    <div *ngIf="generated != false">
+        <div class="ui horizontal divider"></div>
+        <div class="ui grid">
+            <div class="one wide column"></div>
+            <div class="fifteen wide column">
+                <div *ngFor="let okr of okrs" class="ui grid">
+                    <h5>{{okr.title}}</h5>
+                    <div class="ui grid">
+                        <div class="twelve wide column">
+                            <p>{{okr.description}}</p>
+                            <div class="ui grid">
+                                <div class="eight wide column">
+                                    <div class="ui form">
+                                        <div class="field">
+                                            <label>Generated Content:</label>
+                                            <div class="ui message">
+                                                <ol class="ui list">
+                                                  <li value="*">go/Snippets</li>
+                                                    <ol>
+                                                      <li value="-">[date][snippet]</li>
+                                                      <li value="-">[date][snippet]</li>
+                                                      <li value="-">[date][snippet]</li>
+                                                    </ol>
+                                                  <li value="*">Calendar</li>
+                                                    <ol>
+                                                        <li value="-">[date][event]</li>
+                                                        <li value="-">[date][event]</li>
+                                                    </ol>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eight wide column">
+                                    <div class="ui form">
+                                        <div class="field">
+                                            <label>Commentary:</label>
+                                            <textarea>{{okr.description}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="three wide column">
+                            <div class="ui message">
+                                <div class="header">
+                                    Tags:
+                                </div>
+                                <p>{{okr.tags}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui grey message">
+                    <h5>Untagged Items</h5>
+                    <ul class="ui list">
+                        <li>go/Snippets
+                            <ul>
+                                <li *ngFor="let i of numbers">
+                                    <div class="ui grid">
+                                        <div class="seven wide column">
+                                            <h6>[date][snippet]</h6>
+                                        </div>
+                                        <div class="seven wide column">
+                                            <a href="https://snippets.googleplex.com/" target="_blank">fix in go/Snippets</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Google Calendar
+                            <ul>
+                                <li *ngFor="let i of numbers">
+                                    <div class="ui grid">
+                                        <div class="seven wide column">
+                                            <h6>[date][calendar event]</h6>
+                                        </div>
+                                        <div class="seven wide column">
+                                            <a href="https://calendar.google.com/calendar/r" target="_blank">fix in go/Calendar</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ui grey message">
+                    <h5>Unknown Tags</h5>
+                    <div *ngFor="let i of numbers" class="ui grid">
+                        <div class="five wide column">[whatever]</div>
+                        <div class="five wide column">
+                            <select class="ui dropdown">
+                                <option value="">Tags</option>
+                                <option value="1">Performance</option>
+                                <option value="0">Operation</option>
+                            </select>
+                        </div>
+                        <div class="five wide column">
+                            <u>Create a New Tag</u>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui grid">
+            <div class="twelve wide column"></div>
+            <div class="two wide column">
+                <a class="ui blue button" [routerLink]="printUrl()">Confirm</a>
+            </div>
+        </div>
     </div>
 
 </div>

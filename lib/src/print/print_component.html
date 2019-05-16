@@ -1,0 +1,50 @@
+<div class="ui grid">
+    <div class="two wide column"></div>
+    <div class="twelve wide column">
+        <h3>Performance Report</h3>
+        <div class="ui horizontal divider"></div>
+        <div class="ui list">
+            <div class="item">
+                <h5>Author: myself</h5>
+            </div>
+            <div class="item">
+                <h5>Manager: someone</h5>
+            </div>
+            <div class="item">
+                <h5>Department: Ads</h5>
+            </div>
+            <div class="item">
+                <h5>Date Range: 01/01/2019 - 04/29/2019</h5>
+            </div>
+        </div>
+
+        <div *ngFor="let okr of okrs">
+            <div class="ui horizontal divider"></div>
+            <h4>{{okr.title}}</h4>
+            <p>{{okr.description}}</p>
+            <h5>Googler's Commentary</h5>
+            <p>{{commentary}}</p>
+
+            <div class="ui grey message">
+                <h5>Supporting Activity:</h5>
+                <ul class="ui list">
+                    <li>go/Snippets
+                        <ul>
+                            <li *ngFor="let i of numbers">
+                                <h6>[date][snippet]</h6>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Google Calendar
+                        <ul>
+                            <li *ngFor="let i of numbers">
+                                <h6>[date][calendar event]</h6>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="two wide column"></div>
+</div>
